@@ -1,0 +1,98 @@
+<app-afterauth></app-afterauth>
+
+<div class="wrapper img-fluid mystyle"
+     style="background-image: url('../../../../assets/images/bg-registration-form-2.jpg');">
+  <div class="container">
+    <div class="w-100 b-3 text-success col-12">
+      <div class="inner ">
+        <h3 class="text-center text-info">Add Result</h3>
+        <div>
+          <form [formGroup]="form">
+
+            <!-- select patient auto complete -->
+            <!-- <input type="text"
+                 placeholder="Pick one"
+                 aria-label="Number"
+                 matInput
+                 [formControl]="myControl"
+                 [matAutocomplete]="auto"> (onSelectionChange)="updateMySelection($event)"-->
+            <!--  -->
+            <div class="form-group ">
+              <label> SELECT Patient : </label>
+              <input type="text" class="form-control" placeholder="Search Patients ..."
+                     matInput
+                     [formControl]="searchTerm"
+                     [matAutocomplete]="auto" [(ngModel)]="search"/>
+
+              <mat-autocomplete #auto="matAutocomplete" (optionSelected)='getPosts($event.option.value)'>
+                <mat-option *ngFor="let Patients of mypatients" [value]="Patients">
+                  {{ Patients.pat_f_name }}
+                </mat-option>
+              </mat-autocomplete>
+
+            </div>
+            <!-- patient -->
+            <div class="details" *ngIf="statuspatient">
+              <label class="text-success">patient Name : </label><label
+              class="text-info"> {{patientobj.pat_f_name}} {{patientobj.pat_l_name}}.</label><br>
+              <label class="text-success">patient Age : </label><label class="text-info ml-1"> {{patientobj.pat_age}}
+              .</label><br>
+              <label class="text-success">patient Address : </label><label class="text-info"> {{patientobj.pat_address}}
+              .</label><br>
+              <label class="text-success">patient Phone : </label><label
+              class="text-info"> {{patientobj.pat_phone}} </label><br>
+              <label class="text-success">patient E-mail : </label><label
+              class="text-info"> {{patientobj.pat_email}} </label><br>
+              <!-- select test Department -->
+              <div class="form-group ">
+                <label class="text-danger"> Select Department : </label>
+                <select (change)="getdeptId($event)" name="test" id="test" formControlName="_test_type"
+                        class="form-control" [(ngModel)]="dep_Id">
+                  <option *ngFor="let dept of Departments" [value]="dept.dep_Id">
+                    {{dept.dep_name}}
+                  </option>
+                </select>
+              </div>
+              <!-- appear tests -->
+<!--              <div *ngIf="testdeptStatus">-->
+<!--                <div *ngFor="let TestDept of listTestDepartments;let i=index;">-->
+<!--                  <label class="text-success">Add Result For {{TestDept.test_name}} : </label>-->
+<!--                  &lt;!&ndash; <input type="checkbox" #ref [checked]="_Test_name.disabled" (change)="changecheckbox(ref.checked)" /> &ndash;&gt;-->
+                  <!-- <input
+            type="checkbox"
+            (change)="saveUsername = !saveUsername"/> -->
+                  <section  *ngFor=" let TestDept of listTestDepartments; let i = index;">
+                    <!-- input fields inside the *ngFor -->
+                    <label>{{TestDept.test_name}}</label>
+                    <input formControlName="_test_name" #b type="text" [(ngModel)]="testResults[i].Result_value"
+                           name="address_{{i}}"/>
+                  </section>
+<!--                  <input type="number" maxlength="3" min="0" max="999" minlength="1" class="form-control"-->
+<!--                            [(ngModel)]="testResults[i].Result_value"  formControlName="_test_name"/>-->
+<!--                  <label class="text-warning">{{TestDept.reference_value}}</label>-->
+                </div>
+                <!--		 <input type="button" formControlName="btnAdd" routerLink="/Afterauth" class="btn btn-success" [disabled]="!form.valid" (click)="addResult()" value="add result" >-->
+                <button class="btn btn-danger" type="button" formControlName="btnAdd" routerLink="/Afterauth"
+                        class="btn btn-success" [disabled]="!form.valid" (click)="addResult()" value="add result">Add
+                  Result
+                </button>
+
+<!--              </div>-->
+<!--              &lt;!&ndash;  &ndash;&gt;-->
+
+<!--            </div>-->
+
+            <!--  -->
+            <div class="form-group">
+              <!-- <input type="submit" value="login" /> -->
+              <a routerLink="/Afterauth" type="button" class="btn btn-info">cancel</a>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- footer -->
+<!-- <app-footer></app-footer> -->

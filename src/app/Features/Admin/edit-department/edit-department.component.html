@@ -1,0 +1,29 @@
+<!--<app-admin-layout></app-admin-layout>-->
+<app-afterauth></app-afterauth>
+<div class="wrapper" style="background-image: url('../../../../assets/images/bg-registration-form-2.jpg');">
+	<div class="inner">
+			<h3>update Department</h3>
+
+			<div>
+				<form [formGroup]="form">
+
+					<div class="form-group">
+						<label> Change Department Name  </label><br/>
+						<label>  From :<span style="color: darkblue;"> {{oldDept.dep_name}} </span></label><br/>
+					</div>
+					<div class="form-group">
+						<!-- <label> Change Department Name </label><br/>
+						<label> From : {{oldDept.dep_name}}</label><br/> -->
+				<label style="width: 50px;">	 To :	</label><input type="text" class="form-control" formControlName="Dept"  [(ngModel)]="Dept_Name"/><br/>
+						<div class=" alert alert-danger" *ngIf="dept.touched && dept.invalid"> Department Name is required</div>
+					</div>
+
+					<div class="form-group">
+						<input type="button" class="btn btn-success" routerLink="/listdepartment" [disabled]="form.invalid" (click)="editDepartment()" value="Save changes" />
+						<a routerLink="/listdepartment" type="button" class="btn btn-info">cancel</a>
+					</div>
+				</form>
+				</div>
+
+	</div>
+</div>

@@ -1,0 +1,67 @@
+<app-afterauth></app-afterauth>
+
+<div class="m-lg-4">
+<div class="container inner sidebar m-lg-1">
+<a  *ngIf="userService.roleMatch(['Admin','Doctor'])" class="active" routerLink="/allbillreports" type="button" >All built Reports</a>
+<a *ngIf="userService.roleMatch(['Admin','Doctor'])"routerLink="/patientreport" type="button" >Patient Report</a>
+<a *ngIf="userService.roleMatch(['Admin','Doctor'])"routerLink="/resultreport" type="button" >Result Report</a>
+<a *ngIf="userService.roleMatch(['Admin','Doctor'])"routerLink="/testslistreport" type="button" >Tests List Report</a>
+<a *ngIf="userService.roleMatch(['Admin','Doctor'])"routerLink="/testreport" type="button" >Search Test Report</a>
+<a *ngIf="userService.roleMatch(['Admin','Doctor','Dispatcher'])"routerLink="/searchbillreport" type="button" >Search Bill Report</a>
+
+<a *ngIf="userService.roleMatch(['Admin','Doctor'])" routerLink="/searchresultreport" type="button" >Search Result Report</a>
+<a *ngIf="userService.roleMatch(['Admin','Doctor'])"routerLink="/patientpercentaccordingtoage" type="button" >Patient Percent According To Age</a>
+<a *ngIf="userService.roleMatch(['Admin','Doctor'])" routerLink="/patientpercentaccordingtodate" type="button" >Patient Percent According To Date</a>
+<a *ngIf="userService.roleMatch(['Admin','Doctor'])"routerLink="/patientpercentaccordingtogender" type="button" >Patient Percent According To Gender</a>
+</div>
+
+
+<!--  <nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+<!--    <a class="navbar-brand" href="#">Reports</a>-->
+<!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--      <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
+
+<!--    <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--      <ul class="navbar-nav mr-auto">-->
+<!--        <li class="nav-item active">-->
+<!--          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
+<!--        </li>-->
+<!--&lt;!&ndash;        <li class="nav-item">&ndash;&gt;-->
+<!--&lt;!&ndash;          <a class="nav-link" *ngIf="userService.roleMatch(['Admin','Doctor'])" class="active" routerLink="/allbillreports" type="button">allbillreports</a>&ndash;&gt;-->
+<!--&lt;!&ndash;        </li>&ndash;&gt;-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" *ngIf="userService.roleMatch(['Admin','Doctor'])"  routerLink="/patientreport" type="button">patients</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" *ngIf="userService.roleMatch(['Admin','Doctor'])"  routerLink="/resultreport" type="button">results</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" *ngIf="userService.roleMatch(['Admin','Doctor'])"  routerLink="/testslistreport" type="button">tests list </a>-->
+<!--        </li>-->
+<!--&lt;!&ndash;        <li class="nav-item">&ndash;&gt;-->
+<!--&lt;!&ndash;          <a class="nav-link" *ngIf="userService.roleMatch(['Admin','Doctor'])"  routerLink="/testreport" type="button">Search Test </a>&ndash;&gt;-->
+<!--&lt;!&ndash;        </li>&ndash;&gt;-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" *ngIf="userService.roleMatch(['Admin','Doctor','Dispatcher'])"  routerLink="/searchbillreport" type="button">search bill</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" *ngIf="userService.roleMatch(['Admin','Doctor'])"  routerLink="/searchresultreport" type="button">search result</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" *ngIf="userService.roleMatch(['Admin','Doctor'])"  routerLink="/patientpercentaccordingtoage" type="button">Age Report</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" *ngIf="userService.roleMatch(['Admin','Doctor'])"  routerLink="/patientpercentaccordingtodate" type="button">Date Report</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" *ngIf="userService.roleMatch(['Admin','Doctor'])"  routerLink="/patientpercentaccordingtogender" type="button">Gender Report</a>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </nav>-->
+<!-- Page content -->
+<div class="m-lg-2">
+
+</div>
+</div>

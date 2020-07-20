@@ -1,0 +1,70 @@
+<app-afterauth></app-afterauth>
+<div class="wrapper img-fluid" style="background-image: url('../../../../assets/images/bg-registration-form-2.jpg');">
+<!--<app-admin-layout></app-admin-layout>-->
+
+	<div class="container">
+		<div class="w-75 b-3 text-success col-4 offset-4">
+	 <!--<img src="../../../../assets/images/bg-registration-form-2.jpg"/>-->
+	 <div class="inner ">
+		 <!-- <form action=""> -->
+			 <h3 class="text-center text-info">Update Test</h3>
+
+			 <div>
+ <form [formGroup]="form" #frm>
+
+ <!-- test_name -->
+ <div class="form-group">
+
+	 <label>change Test Name from : {{test_obj.test_name}} <br>To :</label>
+	 <input type="text" class="form-control" formControlName="TestName" [(ngModel)]="test_n"/>
+	 <div class=" alert alert-danger" *ngIf="testName.touched && testName.invalid">Test Name is required</div>
+
+ </div>
+ <!--test_price -->
+ <div class="form-group">
+	<label>change Test Price from : {{test_obj.test_price}} <br>To :</label>
+	<input type="text" class="form-control" formControlName="TestPrice" [(ngModel)]="test_price"/>
+	<div class=" alert alert-danger" *ngIf="testPrice.touched && testPrice.invalid">patient last name is required</div>
+
+</div>
+
+ <!--reference_value -->
+ <div class="form-group">
+	<label>change Reference Value from : {{test_obj.reference_value}} <br>To :</label>
+	<input type="text" class="form-control" formControlName="ReferenceValue" [(ngModel)]="reference_value"/>
+	<div class=" alert alert-danger" *ngIf="referenceValue.touched && referenceValue.invalid">reference value is required</div>
+
+</div>
+<!--test_date -->
+<!--<div class="form-group">-->
+<!--	<label>change Date from : {{test_obj.date}} <br>To :</label>-->
+<!--	<input type="date" class="form-control" formControlName="TestDate" [(ngModel)]="date"/>-->
+<!--	<div class=" alert alert-danger" *ngIf="testDate.touched && testDate.invalid">Date is required</div>-->
+
+<!--</div>-->
+	<!-- select Department -->
+	<div class="form-group ">
+
+		<label>
+			Department Name
+		</label>
+		<select (change)="getDeptId($event)" class="form-control" formControlName="depts">
+			<option *ngFor="let dept of Departments"   [value]="dept.dep_Id" >
+			 {{dept.dep_name}}
+			</option>
+		  </select>
+		</div>
+
+		<!--  -->
+
+<!-- button -->
+	 <div class="form-group">
+		 <!-- <input type="submit" value="login" /> -->
+		 <input type="button" [disabled]="!form.valid" (click)="editTest()" [routerLink]="['/listtest',test_obj.Dep_fk ]"  value="Save changes" class="btn btn-success"/>
+		 <input type="button" class="btn btn-info" [routerLink]="['/listtest',test_obj.Dep_fk ]"  value="Cancel" />
+		</div>
+
+ </form>
+ </div>
+ </div>
+ </div>

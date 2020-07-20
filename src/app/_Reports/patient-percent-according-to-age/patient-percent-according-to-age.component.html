@@ -1,0 +1,14 @@
+<app-reports></app-reports>
+
+<tr-viewer
+  [containerStyle]="viewerContainerStyle"
+  [serviceUrl]="'http://localhost:4645/api/reports'"
+  [templateUrl]="'..//assets//telerikReportViewerTemplate-14.1.20.513.html'"
+  [reportSource]="{
+        report: 'Patients Percentage according to Age.trdp',
+        parameters: { }
+    }"
+  [viewMode]="'INTERACTIVE'"
+  [scaleMode]="'SPECIFIC'"
+  [scale]="0.75">
+</tr-viewer>

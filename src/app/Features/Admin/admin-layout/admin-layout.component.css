@@ -1,0 +1,55 @@
+#reg{margin-left: 500px;}
+a{margin: 10px; color: white;
+
+}
+#KirOut{
+    margin-left: 150px;
+    /* background-color: aqua; */
+    width: 250px;
+
+}
+/* a:active{
+   background-color: cadetblue; color: aqua;
+   border-bottom: 1px solid chocolate;
+}*/
+/* .HomeActive{
+    color: goldenrod;
+} */
+a:hover{
+    border-bottom: 1px dashed #03a9f4;
+  
+    /* color: goldenrod; */
+
+} 
+.activeNav{
+    /* background-color: cadetblue; */
+     /* color: aqua; */
+     /* color: goldenrod; */
+     color: #03a9f4;
+   /* border-bottom: 3px solid chocolate; */
+   border-bottom: 3px solid #03a9f4;
+  
+}
+.container-fluid{
+    min-height:100vh;
+    margin-top:0px;
+    background-size: cover;
+    width:100%;
+    align-items: center;  
+    scroll-behavior: unset; 
+}
+
+/* ------------------------- */
+
+/* .container-fluid{
+    min-height:100vh;
+    margin-top:0px;
+    background-size: cover;
+width:100%;
+align-items: center;   
+}
+
+table{width: 70%; margin-left: 250px; margin-top:5px;}
+
+td,th{text-align: center;}
+#bt{margin-left:1000px; background-color: #1caa1cbd;margin-top:200px;margin-bottom:2px;} */

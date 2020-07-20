@@ -1,0 +1,42 @@
+<!--<app-admin-layout></app-admin-layout>-->
+<app-afterauth></app-afterauth>
+<div class="container-fluid"style="background-image: url('../../../../assets/images/background.PNG');">
+    <!-- <a routerLink="admin/AddDepartment"  type="button" class="btn btn-success bt">Add Department</a> -->
+    <!-- <div id="bil"></div> -->
+    <h3>Are you sure you want to delete this Patient</h3>
+  <table class="table table-striped table-light" style="border: 2px solid black;">
+    <thead class="bg-dark text-light">
+        <tr>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Address</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Age</th>
+          <th scope="col">Date</th>
+          <th scope="col">password</th>
+          <th scope="col">Dispatcher</th>
+          <th colspan="2">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr >
+          <!-- <th scope="row">{{patient.test_id}}</th> -->
+
+
+            <td>{{patient.pat_f_name}}</td>
+            <td>{{patient.pat_l_name}}</td>
+            <td>{{patient.pat_mail}}</td>
+            <td>{{patient.pat_address}}</td>
+            <td>{{patient.pat_gender}}</td>
+            <td>{{patient.pat_age}}</td>
+            <td>{{patient.date}}</td>
+            <td>{{patient.pat_password}}</td>
+            <td>-</td>
+           <td><a routerLink="/listpatients" type="button" (click)="DeletePatient()" class="btn btn-danger">Delete</a></td>
+           <td><a routerLink="/listpatients" type="button" class="btn btn-info">cancel</a></td>
+
+        </tr>
+     </tbody>
+  </table>
+  </div>

@@ -1,0 +1,40 @@
+<div class="wrapper img-fluid parent" style="background-image: url('../../../../assets/images/bg-registration-form-2.jpg');">
+    <!-- header -->
+     <app-header></app-header>
+ 
+ <div class="container">
+ <div class="mysokarystyle">
+ <!--  -->
+ <table class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Sample Id</th>
+        <th scope="col">Employee Id</th>
+        <th scope="col">Test Td</th>
+        <th scope="col">Result value</th>
+        <!-- <th scope="col">Department Name</th> -->
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of results">
+            <td class="bg-success">{{item.pat_Id_fk}}</td>
+            <td class="bg-danger">{{item.sam_Id_fk}}</td>
+            <td class="bg-primary">{{item.emp_Id_fk}}</td>
+            <td class="bg-secondary">{{item.test_Id_fk}}</td>
+            <td class="bg-success">{{item.Result_value}}</td>
+        </tr>
+    </tbody>
+  </table>
+        <!-- public pat_Id_fk:number,
+        public sam_Id_fk:number,
+        public emp_Id_fk:number,
+        public test_Id_fk:number,
+        public Result_value:string, -->
+    <!--  -->
+ </div>
+ </div>
+ <app-footer></app-footer>
+ <!-- footer -->
+ </div>
+ 

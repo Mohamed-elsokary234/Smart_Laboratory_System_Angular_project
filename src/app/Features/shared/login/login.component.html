@@ -1,0 +1,64 @@
+<div class="wrapper img-fluid mystyle" style="background-image: url('../../../../assets/images/bg-registration-form-2.jpg');">
+	<div class="container">
+		<div class="w-75 b-3 text-success col-4 offset-4">
+	 <!--<img src="../../../../assets/images/bg-registration-form-2.jpg"/>-->
+	 <div class="inner ">
+		 <!-- <form action=""> -->
+			 <h3 class="text-center text-info">Login For All</h3>
+ 
+			 <div>
+				 <!--  #frm -->
+ <form [formGroup]="form">
+	<!-- email -->
+	<div class="form-group"> 
+		<label>patient email</label>
+		<input type="text" class="form-control" formControlName="emp_email" [(ngModel)]="email"/>
+		<div class=" alert alert-danger" *ngIf="Emp_email.touched && Emp_email.invalid">Employee email is required</div>
+	</div>
+ <!-- password -->
+ <div class="form-group"> 
+	 <label>patient password</label>
+	 <input type="password" class="form-control" formControlName="emp_password" [(ngModel)]="password"/>
+	 <div class="alert alert-danger" *ngIf=" Emp_password.touched && Emp_password.invalid ">Employee password is required</div>
+ <!--  -->
+ </div>
+		<!-- [selected]="user.disp_name === curr_name"> -->
+ <!-- dispatcher  (change)="getUserId($event.target.value)" -->
+ <!-- <div class="form-group "> 
+ <label> your job : </label>
+	<input type="radio" class="form-control" formControlName="job" value="patient" [(ngModel)]="job" required/>patient
+	<input type="radio" class="form-control" formControlName="job" value="doctor" [(ngModel)]="job" required />doctor
+	<input type="radio" class="form-control" formControlName="job" value="dispatcher" [(ngModel)]="job" required />dispatcher -->
+
+ <!-- <label> SELECT Dispatcher : </label>
+ 
+ <select (change)="getdispatcherId($event)" name="disp" id="disp" formControlName="dispatcher_Id"
+  class="form-control" [(ngModel)]="dis_Id" >
+	 <option *ngFor="let user of dispatchers" [value]="user.dis_Id">
+	  {{user.disp_name}}
+	 </option>
+   </select> -->
+<!-- </div> -->
+
+<!--    
+   <div class="form-group "> 
+	<label>Employee job Title</label>
+
+<select name="dept" id="dept" formControlName="job" class="form-control" (change)="getJobId($event)" [(ngModel)]="job_Id">
+	<option *ngFor="let job of jobs"  [value]="job.job_Id" > {{job.job_name}}</option>
+</select>
+</div> -->
+ <!--  -->
+	 <div class="form-group">
+		 <!-- <input type="submit" value="login" /> -->
+		 <input type="button" routerLink="/" class="btn btn-success" [disabled]="!form.valid" (click)="addemp()" value="Login" />
+		 <a routerLink="/" type="button" class="btn btn-info">cancel</a>
+
+	 </div>
+ </form>
+ </div>
+ </div>
+ </div>
+ </div></div>
+ <!-- footer -->
+ <app-footer></app-footer>

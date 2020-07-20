@@ -1,0 +1,8 @@
+.container-fluid{
+    min-height:100vh;
+    margin-top:0px;
+    background-size: cover;
+width:100%;
+align-items: center;  
+scroll-behavior: unset; 
+}

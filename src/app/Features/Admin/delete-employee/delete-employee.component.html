@@ -1,0 +1,22 @@
+<!--<app-admin-layout></app-admin-layout>-->
+<app-afterauth></app-afterauth>
+<div class="container-fluid" style="background-image: url('../../../../assets/images/background.PNG');">
+  <!-- <a routerLink="admin/AddDepartment"  type="button" class="btn btn-success bt">Add Department</a> -->
+  <!-- <div id="bil"></div> -->
+  <h3>Are you sure you want to delete this Employee</h3>
+  <table class="table table-striped table-light" style="border: 2px solid black;">
+    <thead class="bg-dark text-light">
+    <th>Employee Name</th>
+    <th colspan="2">actions</th>
+    </thead>
+    <tbody>
+    <tr>
+      <td> {{ emp.empl_name}} </td>
+      <td><a [routerLink]="['/listemployee']" type="button" (click)="DeleteEmployee()" class="btn btn-danger">Delete</a>
+      </td>
+      <td><a [routerLink]="['/listemployee']" type="button" class="btn btn-info">cancel</a></td>
+
+    </tr>
+    </tbody>
+  </table>
+</div>

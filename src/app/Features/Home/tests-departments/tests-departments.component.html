@@ -1,0 +1,49 @@
+<div class="wrapper img-fluid parent" style="background-image: url('../../../../assets/images/bg-registration-form-2.jpg');">
+    <!-- header -->
+     <app-header></app-header>
+
+ <div class="container">
+ <div class="mysokarystyle">
+<!-- choose department:
+  <ul *ngFor="let item Of departments" >
+  <li><a [routerLink]="['home/testsDepartment',item.dep_Id ]" routerLinkActive="active" >{{item.dep_name}}</a></li> -->
+  <!-- <li><a routerLink="/" routerLinkActive="active" >{{item.dep_name}}</a></li> -->
+<!-- </ul><table class="table table-striped">
+  <thead>
+    <tr> -->
+  <!--  -->
+  <table class="table table-hover table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Test Name</th>
+        <th scope="col">Test Price</th>
+        <th scope="col">Reference Value</th>
+        <th scope="col">Date</th>
+        <!-- <th scope="col">Department Name</th> -->
+      </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let item of testdept;" >
+            <tr   >
+            <td class="bg-success" >{{item.test_Id}}</td>
+            <td  class="bg-secondary" >{{item.test_name}}</td>
+            <td class="bg-success" >{{item.test_price}}</td>
+            <td class="bg-secondary"  >{{item.reference_value}}</td>
+            <td class="bg-success"   >{{item.date|date}}</td>
+            </tr>
+        </ng-container>
+         <!-- public test_Id:number,
+        public test_name:string,
+        public test_price:number,
+        public reference_value:number,
+        public Dep_fk:number,
+        public date:string  -->
+    </tbody>
+  </table>
+    <!--  -->
+ </div>
+ </div>
+ <app-footer></app-footer>
+ <!-- footer -->
+ </div>

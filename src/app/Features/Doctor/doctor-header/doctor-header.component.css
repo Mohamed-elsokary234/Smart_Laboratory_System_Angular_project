@@ -1,0 +1,41 @@
+/* ------------ */
+#KirOut{
+    margin-left: 600px;
+    /* background-color: aqua; */
+    width: 250px;
+
+}
+/* --------- */
+nav{
+    height: 100px;
+   
+    align-content: center;
+    border-radius: 10px;
+    margin-left: 80px;
+    /* margin-right: 80px; */
+   
+}
+#myCarousel
+{
+    margin-top: 80px;
+}
+
+#difflab
+{
+    margin-top: 30px;
+}
+section
+{
+    margin-top: 50px;;
+}
+#reg{margin-left: 500px;}
+a{margin: 20px; color: white;
+
+}
+nav>a:active{
+    border-bottom:2px solid whitesmoke;
+}
+a:hover{
+    border-bottom:1px dotted whitesmoke;
+}
+.endNav{margin-left: 100px;}

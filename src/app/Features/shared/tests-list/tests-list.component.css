@@ -1,0 +1,15 @@
+#bel{height: 100px;}
+h1{text-align: center; margin-top:20px;margin-left:-40px;}
+#bil{height: 100px;}
+.container-fluid{
+    min-height:100vh;
+    margin-top:0px;
+    background-size: cover;
+width:100%;
+align-items: center;   
+}
+
+table{width: 50%; margin-left: 400px; margin-top:10px;}
+
+td,th{text-align: center;}
+#bt{margin-left:1300px; background-color: #1caa1cbd;margin-top:5px;margin-bottom:2px;}

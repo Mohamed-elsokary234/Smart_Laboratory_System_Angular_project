@@ -1,0 +1,25 @@
+/* @import '../' */
+.mysokarystyle{
+    margin-top: 100px;
+    border: 13px groove teal;
+    text-align: center;
+    font-size: 2em;
+    color: #002c2c;
+    display: block;
+    height: 415px;
+    border-radius: 10px;
+    /* border:1px solid rgb(204, 199, 199); */
+
+    /* ba */
+}
+.mysokarystyle2{
+    border: 13px groove teal;
+    padding: 50px 70px;
+    border-radius: 1px;
+    height: 390px;
+    /* background-color: rgba(red, rgb(31, 126, 31), blue, alpha); */
+}
+.parent{
+    border:1px solid rgb(204, 199, 199);
+
+}

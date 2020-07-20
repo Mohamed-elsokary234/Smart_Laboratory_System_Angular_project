@@ -1,0 +1,63 @@
+<app-header></app-header>
+<!--  -->
+<div class="wrapper img-fluid mysokarystyle" style="background-image: url('../../../../assets/images/bg-registration-form-2.jpg');">
+    <div class="container">
+        <div class="w-75 b-3 text-success col-4 offset-4">
+     <!--<img src="../../../../assets/images/bg-registration-form-2.jpg"/>-->
+     <div class="inner ">
+         <!-- <form action=""> -->
+             <h3 class="text-center text-info">Contact Us</h3>
+ 
+             <div>
+    <form [formGroup]="form">
+						
+        <!-- <div class="form-group">
+            <label> Department Name</label>
+            <input type="text" class="form-control" formControlName="Dept" [(ngModel)]="Name"/>
+            <div class=" alert alert-danger" *ngIf="dept.touched && dept.invalid">Department Name is required</div>
+        </div>
+    
+        <div class="form-group">
+            <input type="submit" value="login" />
+            <input type="button" routerLink="/admin/ListDepartment" [disabled]="form.invalid" class="btn btn-success" (click)="addDepartment()" value="Add Department" />
+            <a routerLink="/admin/ListDepartment" type="button" class="btn btn-info">cancel</a>
+        </div> -->
+  <!--  -->
+  <div class="form-group">
+      <label for="fname">Please Enter your Name</label>
+      <input type="text" class="form-control" formControlName="empl_name" [(ngModel)]="EmpName" id="fname" name="firstname" placeholder="Your name..">
+      <div class=" alert alert-danger" *ngIf="Empl_name.touched && Empl_name.invalid">Your Name is required</div>
+
+    </div>
+  <div class="form-group">
+
+      <label for="mail">Please Enter Your e-mail</label>
+      <input type="email" id="mail"  class="form-control" name="mail" formControlName="empl_mail" [(ngModel)]="EmpMail" placeholder="Your E-mail..">
+      <div class=" alert alert-danger" *ngIf="Empl_mail.touched && Empl_mail.invalid">Your e-Mail is required</div>
+
+    </div>
+  <div class="form-group">
+
+      <label for="job">Please Enter Your Job</label>
+      <select name="dept" id="dept" formControlName="empl_job" class="form-control" (change)="getJobId($event)" [(ngModel)]="job_Id">
+        <option *ngFor="let job of jobs"  [value]="job.job_Id" > {{job.job_name}}</option>
+    </select>
+    
+  </div>
+  <div class="form-group">
+
+      <label for="subject">Please Enter Your Subject</label>
+      <textarea id="subject" name="subject"  class="form-control" placeholder="Write something.." style="height:200px"></textarea>
+  </div>
+  <div class="form-group">
+
+      <input type="button" routerLink="/" class="btn btn-success" [disabled]="!form.valid" value="Send" />
+      <input type="button" routerLink="/"  class="btn btn-info" value="cancel" />
+  </div>
+    </form>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+			<app-footer></app-footer>

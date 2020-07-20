@@ -1,0 +1,55 @@
+<div class="wrapper img-fluid parent" style="background-image: url('../../../../assets/images/bg-registration-form-2.jpg');">
+    <!-- header -->
+     <app-header></app-header>
+
+ <div class="container">
+ <div class="mysokarystyle">
+  <table class="table  table-striped table-dark table-hover">
+    <thead>
+      <tr>
+        <th scope="col">
+choose department:
+</th>
+</tr>
+</thead>
+<tbody class="table-secondary">
+  <tr *ngFor="let item Of departments" >
+  <td><a [routerLink]="['home/testsDepartment',item.dep_Id ]" routerLinkActive="active" >{{item.dep_name}}</a></td>
+  <!-- <li><a routerLink="/" routerLinkActive="active" >{{item.dep_name}}</a></li> -->
+  </tr>
+</tbody>
+</table>
+  <!--  -->
+  <!-- <table class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Test Name</th>
+        <th scope="col">Test Price</th>
+        <th scope="col">Reference Value</th>
+        <th scope="col">Date</th> -->
+        <!-- <th scope="col">Department Name</th> -->
+      <!-- </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of tests">
+            <td class="bg-success">{{item.test_Id}}</td>
+            <td class="bg-warning">{{item.test_name}}</td>
+            <td class="bg-primary">{{item.test_price}}</td>
+            <td class="bg-secondary">{{item.reference_value}}</td>
+            <td class="bg-success">{{item.date|date}}</td>
+        </tr> -->
+        <!-- public test_Id:number,
+        public test_name:string,
+        public test_price:number,
+        public reference_value:number,
+        public Dep_fk:number,
+        public date:string -->
+    <!-- </tbody>
+  </table> -->
+    <!--  -->
+ </div>
+ </div>
+ <app-footer></app-footer>
+ <!-- footer -->
+ </div>

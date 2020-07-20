@@ -1,0 +1,83 @@
+<app-reports></app-reports>
+
+<div class="search" style="text-align:left;">
+  <h1>
+    {{ title }}
+  </h1>
+
+  <form>
+    <mat-form-field class="container">
+
+      <!-- ADD AN INPUT BOX OF TYPE TEXT AND LINK IT TO THE AUTO COMPLETE PANEL. -->
+      <input type="text" placeholder="Search Patients ..."
+             matInput
+             [formControl]="searchTerm"
+             [matAutocomplete]="auto" #b>
+
+      <button [formControl]="searchTerm"
+              class="btn btn-danger"
+              style="border: 1px solid crimson; border-radius: 30px; margin-top: 10px;"
+              (click)="viewer1.setReportSource({report: 'TestRforPatient.trdp', parameters: {'x':b.value }})  ">Click to Show Result
+      </button>
+
+      <!-- CREATE AUTO COMPLETE PANEL WITH OPTIONS. -->
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let Patients of mypatients" [value]="Patients.pat_f_name" (click)="viewer1.setReportSource({report: 'searchBillReport.trdp', parameters: {'x':Patients.pat_Id}}) ; b.value= ' '">
+          {{ Patients.pat_f_name }}
+        </mat-option>
+      </mat-autocomplete>
+
+    </mat-form-field>
+  </form>
+
+</div>
+<!--<div style="padding: 20px">-->
+<!--  <h1>-->
+<!--    {{ title }}-->
+<!--  </h1>-->
+
+<!--  <form>-->
+<!--    <mat-form-field class="container">-->
+
+<!--      &lt;!&ndash; ADD AN INPUT BOX OF TYPE TEXT AND LINK IT TO THE AUTO COMPLETE PANEL. &ndash;&gt;-->
+<!--      <input type="text" placeholder="Search Patients ..."-->
+<!--             matInput-->
+<!--             [formControl]="searchTerm"-->
+<!--             [matAutocomplete]="auto"-->
+<!--             style="border: 1px solid crimson; border-radius: 30px"-->
+<!--             #b-->
+<!--             class="form-control">-->
+<!--      <button [formControl]="searchTerm"-->
+<!--              class="btn btn-danger"-->
+<!--              style="border: 1px solid crimson; border-radius: 30px; margin-top: 10px;"-->
+<!--              (click)="viewer1.setReportSource({report: 'searchBillReport.trdp', parameters: {'x':b.value}})  ">Find Patient by ID-->
+<!--      </button>-->
+
+<!--      &lt;!&ndash; CREATE AUTO COMPLETE PANEL WITH OPTIONS. &ndash;&gt;-->
+<!--      <mat-autocomplete #auto="matAutocomplete">-->
+<!--        <mat-option *ngFor="let patient of mypatients" [value]="patient"-->
+<!--                    (click)="viewer1.setReportSource({report: 'searchBillReport.trdp', parameters: {'x':patient.pat_Id}}) ; b.value= ' '">-->
+<!--          {{ patient.pat_f_name }}-->
+<!--        </mat-option>-->
+<!--      </mat-autocomplete>-->
+
+<!--    </mat-form-field>-->
+<!--  </form>-->
+
+<!--</div>-->
+<tr-viewer #viewer1
+           [containerStyle]="viewerContainerStyle"
+           [serviceUrl]="'http://localhost:4645/api/reports'"
+           [templateUrl]="'..//assets//telerikReportViewerTemplate-14.1.20.513.html'"
+           [reportSource]="{
+        report: 'searchBillReport.trdp',
+        parameters: { }
+    }"
+           [viewMode]="'INTERACTIVE'"
+           [scaleMode]="'SPECIFIC'"
+           [scale]="0.75">
+</tr-viewer>
+
+<!--<ul *ngFor = "let app of myBooks.pat_f_name">-->
+<!--  <li>{{app.pat_f_name}}</li> //Test code to only print one element-->
+<!--</ul>-->

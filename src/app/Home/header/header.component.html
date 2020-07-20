@@ -1,0 +1,144 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-info fixed-top">
+  <img src="../../../assets/images/icons/icons8-microscope-48.png"/>
+    <a class="navbar-brand" routerLink="/" routerLinkActive="active">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <!-- [routerLink]="['/','services']" -->
+          <a class="nav-link link" class="navbar-brand" (click)="godiv()" href="#services" routerLinkActive="active">Services<span class="sr-only">(current)</span></a>
+        </li>
+       <!-- drop down list -->
+       <!-- <li> -->
+       <!-- <label>Departments</label>
+       <select name="dept" id="dept" formControlName="job" class="form-control" (change)="getJobId($event)" [(ngModel)]="job_Id">
+              <option *ngFor="let job of jobs; let i=index"  [value]="job.job_Id" > {{job[i]}}</option>
+            </select>
+            </li> -->
+       <!-- <li> -->
+       <!-- <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Messages</a>
+        <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">Inbox</a>
+            <a href="#" class="dropdown-item">Sent</a>
+            <a href="#" class="dropdown-item">Drafts</a>
+        </div>
+    </div> -->
+    <!-- <div class="btn-group" dropdown>
+      <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+              aria-controls="dropdown-basic">
+        Button dropdown <span class="caret"></span>
+      </button>
+      <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+          role="menu" aria-labelledby="button-basic">
+        <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+        <li class="divider dropdown-divider"></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+        </li>
+      </ul>
+    </div>
+    </li> -->
+       <!-- <mat-drawer-container class="example-container" [hasBackdrop]="hasBackdrop.value">
+        <mat-drawer #drawer [mode]="mode.value">I'm a drawer</mat-drawer>
+        <mat-drawer-content>
+          <mat-form-field>
+            <mat-label>Sidenav mode</mat-label>
+            <mat-select #mode value="">
+              <mat-option value="side">Side</mat-option>
+              <mat-option value="over">Over</mat-option>
+              <mat-option value="push">Push</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Has backdrop</mat-label>
+            <mat-select #hasBackdrop>
+              <mat-option>Unset</mat-option>
+              <mat-option [value]="true">True</mat-option>
+              <mat-option [value]="false">False</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
+        </mat-drawer-content>
+      </mat-drawer-container> -->
+
+       <!--  -->
+        <!-- <li class="nav-item dropdown">
+            <a class="nav-link" class="navbar-brand dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" routerLinkActive="active">Tests Library</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Page 1-1</a></li>
+              <li><a href="#">Page 1-2</a></li>
+              <li><a href="#">Page 1-3</a></li>
+            </ul>
+          </li> -->
+
+            <!-- <select name="dept" id="dept" formControlName="job" class="form-control" (change)="getJobId($event)" [(ngModel)]="job_Id">
+              <option *ngFor="let job of jobs"  [value]="job.job_Id" > {{job.job_name}}</option>
+            </select> -->
+            <!--  -->
+            <!-- <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Page 1-1</a></li>
+                <li><a href="#">Page 1-2</a></li>
+                <li><a href="#">Page 1-3</a></li>
+              </ul> -->
+              <!-- end drop down list normal -->
+            <!-- <li class="nav-item routerLink="/home/TestsLibrary""> -->
+              <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+                <!-- Dropdown -->
+              <!-- </a> -->
+              <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a> -->
+              <!-- </div> -->
+            <!-- </div> -->
+            <!-- </li> -->
+          <!-- </li> -->
+          <!--  -->
+          <li class="nav-item">
+            <a class="nav-link" class="navbar-brand" routerLink="/home/TestsLibrary" routerLinkActive="active">Tests Library</a>
+          </li> <li class="nav-item">
+            <a class="nav-link" class="navbar-brand" routerLink="/shared/Login" routerLinkActive="active">Test Result</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="mailto:admin@gmail.com ?cc= sokary@gmail.com&subject=send massage for admin &body=please send feed back . " class="navbar-brand" routerLinkActive="active">Contact us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" class="navbar-brand" routerLink="/home/Aboutus" routerLinkActive="active">About us</a>
+          </li>
+          <li  class="nav-item endNav">
+<!--            <a class="nav-link" class="navbar-brand" routerLink="/shared/PatientRegister" routerLinkActive="active">Register</a>-->
+            <a class="nav-link navbar-brand" routerLink='/signup' routerLinkActive='active'>Sign Up</a>
+
+          </li>
+          <li class="nav-item">
+<!--            <a class="nav-link" class="navbar-brand" routerLink="/Login" routerLinkActive="active">Login</a>-->
+            <a class="nav-link navbar-brand" routerLink='/login' routerLinkActive='active'>Sign In</a>
+          </li>
+
+
+
+
+
+          <div class="page_social greylinks">
+            <a href="#" class="social-icon soc-facebook"></a>
+            <a href="#" class="social-icon soc-twitter"></a>
+            <a href="#" class="social-icon soc-youtube"></a>
+            <a href="#" class="social-icon soc-google"></a>
+        </div>
+
+
+      </ul>
+
+    </div>
+  </nav>
+  <!---end of nav-->

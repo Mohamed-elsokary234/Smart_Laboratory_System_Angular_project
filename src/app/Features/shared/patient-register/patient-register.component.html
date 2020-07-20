@@ -1,0 +1,126 @@
+<div class="wrapper img-fluid mystyle" style="background-image: url('../../../../assets/images/bg-registration-form-2.jpg');">
+	<div class="container">
+		<div class="w-75 b-3 text-success col-4 offset-4">
+	 <!--<img src="../../../../assets/images/bg-registration-form-2.jpg"/>-->
+	 <div class="inner ">
+		 <!-- <form action=""> -->
+			 <h3 class="text-center text-info">Register Patient</h3>
+ 
+			 <div>
+				 <!--  #frm -->
+ <form [formGroup]="form">
+	
+	 <!-- first name -->
+	 <div class="form-group "> 
+		 <label>patient first Name</label>
+		 <input type="text" class="form-control" formControlName="Patient_fname" [(ngModel)]="fName"/>
+		 <div class=" alert alert-danger" *ngIf="patient_fname.touched && patient_fname.invalid">patient first name is required</div>
+	 </div>
+ <!-- last name -->
+ <div class="form-group"> 
+	 <label>patient last Name</label>
+	 <input type="text" class="form-control" formControlName="Patient_lname" [(ngModel)]="lName"/>
+	 <div class=" alert alert-danger" *ngIf="patient_lname.touched && patient_lname.invalid">patient last name is required</div>
+ 
+ </div>
+ <!-- gender -->
+ <div class="form-group"> 
+	 <label>patient gender</label>
+	 <!-- <p> -->
+		 <input type="radio" value="male"  formControlName="Patient_gender" [(ngModel)]="gender"  required > Male
+		 <input type="radio" value="female" formControlName="Patient_gender" [(ngModel)]="gender" required > Female
+		 <div class=" alert alert-danger" *ngIf="patient_gender.touched && patient_gender.invalid">patient gender is required</div>
+	  
+	 <!-- </p>  -->
+ </div>
+ 
+ <!-- phone_num -->
+ <!-- -->
+ <div class="form-group"> 
+	 <label>patient phone number</label>
+	 <input type="text" class="form-control" maxlength="11" minlength="11" formControlName="Phone_number" [(ngModel)]="phoneNum"/>
+	 <div class=" alert alert-danger" *ngIf="phone_num.touched && phone_num.invalid">patient phone_num is required</div>
+ 
+ </div>
+ <!-- age -->
+ <div class="form-group"> 
+	 <label>patient age</label>
+	 <input type="number" class="form-control" min="1" max="99" maxlength="2" formControlName="Patient_age" [(ngModel)]="age"/>
+	 <div class=" alert alert-danger" *ngIf="patient_age.touched && patient_age.invalid">patient age is required</div>
+ </div>
+ <!-- date -->
+ <div class="form-group"> 
+	 <label>patient date</label>
+	 <input type="date" class="form-control" formControlName="Patient_date" [(ngModel)]="date"/>
+	 <div class=" alert alert-danger" *ngIf="patient_date.touched && patient_date.invalid">patient date is required</div>
+ </div>
+ <!-- password -->
+ <div class="form-group"> 
+	 <label>patient password</label>
+	 <input type="password" class="form-control" formControlName="Patient_password" [(ngModel)]="password"/>
+	 <div class=" alert alert-danger" *ngIf="patient_password.touched && patient_password.invalid">patient password is required</div>
+ <!--  -->
+ <!-- <mat-form-field>
+	 <input matInput placeholder="New password" formControlName="password" required>
+	 <mat-error *ngIf="myForm.hasError('required', 'password')">
+		 Please enter your new password
+	 </mat-error>
+   </mat-form-field>
+ 
+   <mat-form-field>
+	 <input matInput placeholder="Confirm password" formControlName="confirmPassword" [errorStateMatcher]="matcher">
+	 <mat-error *ngIf="myForm.hasError('notSame')">
+		 Passwords do not match
+	 </mat-error>  
+   </mat-form-field> -->
+ <!--  -->
+ </div>
+ <!-- address -->
+ <div class="form-group"> 
+	 <label>patient address</label>
+	 <input type="text" class="form-control" formControlName="Patient_address" [(ngModel)]="address"/>
+	 <div class=" alert alert-danger" *ngIf="patient_address.touched && patient_address.invalid">patient address is required</div>
+ </div>
+ <!-- email -->
+ <div class="form-group"> 
+	 <label>patient email</label>
+	 <input type="text" class="form-control" formControlName="Patient_email" [(ngModel)]="email"/>
+	 <div class=" alert alert-danger" *ngIf="patient_email.touched && patient_email.invalid">patient email is required</div>
+ </div>
+ 
+		<!-- [selected]="user.disp_name === curr_name"> -->
+ <!-- dispatcher  (change)="getUserId($event.target.value)"-->
+ <div class="form-group "> 
+	
+ <label> SELECT Dispatcher : </label>
+ 
+ <select (change)="getdispatcherId($event)" name="disp" id="disp" formControlName="dispatcher_Id"
+  class="form-control" [(ngModel)]="dis_Id" >
+	 <option *ngFor="let user of dispatchers" [value]="user.dis_Id">
+	  {{user.disp_name}}
+	 </option>
+   </select>
+</div>
+
+<!--    
+   <div class="form-group "> 
+	<label>Employee job Title</label>
+
+<select name="dept" id="dept" formControlName="job" class="form-control" (change)="getJobId($event)" [(ngModel)]="job_Id">
+	<option *ngFor="let job of jobs"  [value]="job.job_Id" > {{job.job_name}}</option>
+</select>
+</div> -->
+ <!--  -->
+	 <div class="form-group">
+		 <!-- <input type="submit" value="login" /> -->
+		 <input type="button" routerLink="/admin/ListPatients" class="btn btn-success" [disabled]="!form.valid" (click)="addpatient()" value="Register" />
+		 <a routerLink="/" type="button" class="btn btn-info">cancel</a>
+
+	 </div>
+ </form>
+ </div>
+ </div>
+ </div>
+ </div></div>
+ <!-- footer -->
+ <app-footer></app-footer>

@@ -1,0 +1,23 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.container {
+  width: 300px;
+  font: 17px Calibri;
+}
+
+
+p{
+    background-color: burlywood;
+    margin:300px;
+}
+
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}

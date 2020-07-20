@@ -1,0 +1,41 @@
+<!--<app-admin-layout></app-admin-layout>-->
+<app-afterauth></app-afterauth>
+<div class="container-fluid" style="background-image: url('../../../../assets/images/background.PNG');">
+  <a id="bt" routerLink="/admin/ListDepartment/admin/AddDepartment"type="button" class="btn btn-success btn-lg">Add department</a>
+
+  <table class="table table-striped table-light" style="border: 2px solid black;">
+  <thead class="bg-dark text-light">
+      <tr>
+        <!-- <th scope="col">ID</th> -->
+        <!-- <th scope="col">Test Name</th> -->
+        <!-- <th scope="col">Price</th> -->
+        <!-- <th scope="col">Normal value</th> -->
+        <!-- <th scope="col">Test Date</th> -->
+        <th scope="col">Department Name</th>
+        <!-- <th colspan="4">Action</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <ng-container *ngFor=""> -->
+    <tr *ngFor=" let dept of departments;let i=index;">
+        <!-- <th scope="row">{{item.test_id}}</th> -->
+
+          <!-- <td>{{item.test_name}}</td> -->
+          <!-- <td>{{item.test_price}}</td> -->
+          <!-- <td>{{item.reference_value}}</td> -->
+          <!-- <td>{{item.date|date}}</td> -->
+          <td><a [routerLink]="['/listtest',dept.dep_Id ]" > {{dept.dep_name}} </a></td>
+
+        <!-- <td><a [routerLink]="['admin/EditTest',item.test_id ]" type="button" class="btn btn-info">Edit</a></td> -->
+        <!-- <td><a [routerLink]="['admin/DeleteTest',item.test_id ]" type="button" class="btn btn-danger">Delete</a></td> -->
+      </tr>
+    <!-- </ng-container> -->
+      <!-- <tr> -->
+<!-- <p> fghjkl {{departmentsNames[0]}}</p> -->
+<!-- </tr> -->
+
+
+    </tbody>
+</table>
+
+</div>

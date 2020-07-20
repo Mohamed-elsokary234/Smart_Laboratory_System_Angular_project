@@ -1,0 +1,95 @@
+<nav >
+  <div class="nav-wrapper">
+    <a class="brand-logo " href="#">
+      <i class="material-icons ">cloud</i>Welcome To Our Medical Laboratory</a>
+    <ul class="right hide-on-med-and-down" id="nav-mobile">
+      <li *ngIf="userService.roleMatch(['Admin'])">
+        <a routerLink="/profile"><STRONG>Admin Profile</STRONG></a>
+      </li>
+
+      <li *ngIf="userService.roleMatch(['Doctor'])">
+        <a routerLink="/profile"><strong>Doctor Profile</strong></a>
+      </li>
+      <li *ngIf="userService.roleMatch(['Dispatcher'])">
+        <a routerLink="/profile"><strong>Dispatcher Profile</strong></a>
+      </li>
+      <li *ngIf="userService.roleMatch(['Patient'])">
+        <a routerLink="/profile"><strong>Patient Profile</strong></a>
+      </li>
+
+      <li *ngIf="userService.roleMatch(['Admin'])">
+        <a routerLink="/listdepartment">Departments</a>
+      </li>
+      <li *ngIf="userService.roleMatch(['Admin','Dispatcher'])">
+        <a routerLink="/listpatients">Patients</a>
+      </li>
+<!--      <li *ngIf="userService.roleMatch(['Admin'])">-->
+<!--        <a routerLink="/listbill">Bills</a>-->
+<!--      </li>-->
+      <li *ngIf="userService.roleMatch(['Admin'])">
+        <a routerLink="/listemployee">Employees</a>
+      </li>
+      <li *ngIf="userService.roleMatch(['Admin','Doctor'])">
+        <a routerLink="/listtestdepartment">Tests</a>
+      </li>
+      <li *ngIf="userService.roleMatch(['Admin','Doctor'])">
+        <a routerLink="/reports">Reports</a>
+      </li>
+<!--      <li class="nav-item dropdown">-->
+<!--        <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--          Results-->
+<!--        </a>-->
+<!--        <div *ngIf="userService.roleMatch(['Doctor'])" class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--          <a  routerLink="/addresult">Add Result</a>-->
+<!--          <a  routerLink="/editresult">Edit Result</a>-->
+<!--          <div class="dropdown-divider"></div>-->
+<!--        </div>-->
+<!--      </li>-->
+<!--      <ul class="nav navbar-nav" *ngIf="userService.roleMatch(['Doctor'])">-->
+<!--          <li> <a  routerLink="#">Results</a></li>-->
+<!--          <li> <a style="background-color:gray" routerLink="/addresult">Add Result</a></li>-->
+<!--          <li> <a style="background-color: gray" routerLink="/editresult">Edit Result</a></li>-->
+<!--      </ul>-->
+      <li *ngIf="userService.roleMatch(['Doctor'])">
+        <a routerLink="/addresult">Result</a>
+      </li>
+      <li *ngIf="userService.roleMatch(['Doctor'])">
+        <a routerLink="/editresult">editresult</a>
+      </li>
+
+      <li *ngIf="userService.roleMatch(['Dispatcher'])">
+        <a routerLink="/addbill">Add Bill</a>
+      </li>
+<!--      <li *ngIf="userService.roleMatch(['Dispatcher'])">-->
+<!--        <a routerLink="/addbill">Add bill</a>-->
+<!--      </li>-->
+      <li *ngIf="userService.roleMatch(['Dispatcher'])">
+        <a routerLink="/searchbillreport">Print bill</a>
+      </li>
+      <li *ngIf="userService.roleMatch(['Patient'])">
+        <a routerLink="/searchresultreport">Results</a>
+      </li>
+<!--      <li *ngIf="userService.roleMatch(['Doctor'])">-->
+<!--        <a routerLink="/book">book</a>-->
+<!--      </li>-->
+      <li>
+        <a (click)="Logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!--<div *ngIf="userClaims" class="row">-->
+<!--  <div class="col s12 m7">-->
+<!--    <div class="card">-->
+<!--      <div class="card-content">-->
+<!--        <span>Username :{{userClaims.UserName}}</span>-->
+<!--        <br>-->
+<!--        <span>Email : {{userClaims.Email}}</span>-->
+<!--        <br>-->
+<!--        <span>Full Name : {{userClaims.FirstName}} {{userClaims.LastName}}</span>-->
+<!--        <br>-->
+<!--        <span>Logged On : {{userClaims.LoggedOn}}</span>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

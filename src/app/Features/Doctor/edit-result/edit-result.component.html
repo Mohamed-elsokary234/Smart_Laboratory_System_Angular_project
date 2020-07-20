@@ -1,0 +1,149 @@
+<app-afterauth></app-afterauth>
+
+<div class="wrapper img-fluid mystyle"
+     style="background-image: url('../../../../assets/images/bg-registration-form-2.jpg');">
+  <div class="container">
+    <div class="w-100 b-3 text-success col-12">
+      <div class="inner ">
+        <h3 class="text-center text-info">Edit Result</h3>
+        <div>
+          <form [formGroup]="form">
+
+            <!-- select patient auto complete -->
+            <!-- <input type="text"
+                 placeholder="Pick one"
+                 aria-label="Number"
+                 matInput
+                 [formControl]="myControl"
+                 [matAutocomplete]="auto"> (onSelectionChange)="updateMySelection($event)"-->
+            <!--  -->
+            <div class="form-group ">
+              <label> SELECT Patient : </label>
+              <input type="text" class="form-control" placeholder="Search Patients ..."
+                     matInput
+                     [formControl]="searchTerm"
+                     [matAutocomplete]="auto" [(ngModel)]="search"/>
+
+              <mat-autocomplete #auto="matAutocomplete" (optionSelected)='getPosts($event.option.value)'>
+                <mat-option *ngFor="let Patients of mypatients" [value]="Patients">
+                  {{ Patients.pat_f_name }}
+                </mat-option>
+              </mat-autocomplete>
+
+            </div>
+            <!-- patient -->
+            <div class="details" *ngIf="statuspatient">
+              <label class="text-success">patient Name : </label><label
+              class="text-info"> {{patientobj.pat_f_name}} {{patientobj.pat_l_name}}.</label><br>
+              <label class="text-success">patient Age : </label><label class="text-info ml-1"> {{patientobj.pat_age}}
+              .</label><br>
+              <label class="text-success">patient Address : </label><label class="text-info"> {{patientobj.pat_address}}
+              .</label><br>
+              <label class="text-success">patient Phone : </label><label
+              class="text-info"> {{patientobj.pat_phone}} </label><br>
+              <label class="text-success">patient E-mail : </label><label
+              class="text-info"> {{patientobj.pat_email}} </label><br>
+              <!-- select test Department -->
+              <div class="form-group ">
+                <label class="text-danger"> Select Department : </label>
+                <select (change)="getdeptId($event)" name="test" id="test" formControlName="_test_type"
+                        class="form-control" [(ngModel)]="dep_Id">
+                  <option *ngFor="let dept of Departments" [value]="dept.dep_Id">
+                    {{dept.dep_name}}
+                  </option>
+                </select>
+              </div>
+              <section  *ngFor=" let TestDept of listTestDepartments; let i = index;">
+                <!-- input fields inside the *ngFor -->
+                <label>{{TestDept.test_name}}</label>
+
+                <input formControlName="_test_name" #b type="text" [(ngModel)]="testResults[i].Result_value"
+                       name="address_{{i}}"/>
+
+              </section>
+
+                            <!-- appear tests -->
+<!--              <div *ngIf="testdeptStatus">-->
+<!--                <div *ngFor="let TestDept of listTestDepartments;let i=index;">-->
+<!--                  <label class="text-success">Add Result For {{TestDept.test_name}} : </label>-->
+<!--                  &lt;!&ndash; <input type="checkbox" #ref [checked]="_Test_name.disabled" (change)="changecheckbox(ref.checked)" /> &ndash;&gt;-->
+                  <!-- <input
+            type="checkbox"
+            (change)="saveUsername = !saveUsername"/> -->
+<!--                  <input type="number" maxlength="3" min="0" max="999" minlength="1" class="form-control"-->
+<!--                         [(ngModel)]="testResults[i].Result_value" formControlName="_test_name"/>-->
+<!--                  <label class="text-warning">{{TestDept.reference_value}}</label>-->
+<!--                </div>-->
+<!--                <input type="button" formControlName="btnEdit" routerLink="/Afterauth" class="btn btn-success"-->
+<!--                       [disabled]="!form.valid" (click)="editResult()" value="edit Result"/>-->
+
+              <button type="button" formControlName="btnEdit" routerLink="/Afterauth" class="btn btn-success"
+                      [disabled]="!form.valid" (click)="editResult()" value="edit Result">Edit
+                Result
+              </button>
+
+<!--              </div>-->
+              <!--  -->
+
+            </div>
+            <!-- <div class="form-group ">
+            <label> SELECT Patient : </label>
+            <select (change)="getpatientId($event)" name="Patient" id="Patient" formControlName="_pat_Id_fk" [(ngModel)]="testResults[i].Result_value"
+             class="form-control" [(ngModel)]="pat_Id_fk" >
+              <option *ngFor="let Patient of listpatients" [value]="Patient.pat_id">
+               {{Patient.pat_f_name + " " + Patient.pat_l_name}}
+              </option>
+              </select>
+           </div> -->
+            <!-- test -->
+            <!-- <div class="form-group ">
+                <label> SELECT Test : </label>
+                <select (change)="getTestId($event)" name="test" id="test" formControlName="_test_Id_fk"
+                 class="form-control" [(ngModel)]="test_Id_fk" >
+                    <option *ngFor="let test of listtests" [value]="test.test_id">
+                     {{test.test_name}}
+                    </option>
+                  </select>
+               </div> -->
+            <!--  -->
+            <!-- listsampleTests -->
+            <!-- <div class="form-group ">
+               <label> SELECT sample  : </label>
+               <select (change)="getsampleId($event)" name="sample" id="sample" formControlName="_sam_Id_fk"
+                class="form-control" [(ngModel)]="sam_Id_fk" >
+                   <option *ngFor="let sample of listsampleTests" [value]="sample.sampel_id">
+                    {{sample.details}}
+                   </option>
+                 </select>
+              </div> -->
+            <!-- emp -->
+            <!-- <div class="form-group ">
+                <label> SELECT Employee : </label>
+                <select (change)="getemployeeId($event)" name="emp" id="emp" formControlName="_emp_Id_fk"
+                 class="form-control" [(ngModel)]="emp_Id_fk" >
+                    <option *ngFor="let emp of listemployees" [value]="emp.empl_Id">
+                     {{emp.empl_name}}
+                    </option>
+                  </select>
+               </div> -->
+            <!--  -->
+            <!-- Result_value -->
+            <!-- <div class="form-group ">
+                 <label> change Result value from {{oldResult.details}} To :</label>
+                 <input type="text" class="form-control" formControlName="_result_value" [(ngModel)]="Result_value"/>
+                 <div class=" alert alert-danger" *ngIf="_Result_value.touched && _Result_value.invalid"> Result value is required</div>
+             </div> -->
+            <!--  -->
+            <div class="form-group">
+              <!-- <input type="submit" value="login" /> -->
+              <a routerLink="/Afterauth" type="button" class="btn btn-info">cancel</a>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- footer -->
+<!-- <app-footer></app-footer> -->

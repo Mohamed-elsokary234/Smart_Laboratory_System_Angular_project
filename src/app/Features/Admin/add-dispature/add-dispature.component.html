@@ -1,0 +1,37 @@
+<app-admin-layout></app-admin-layout>
+
+		<div class="wrapper img-fluid" style="background-image: url('../../../../assets/images/bg-registration-form-2.jpg');">
+			<div class="container">
+				<div class="w-75 b-3 text-success col-4 offset-4">
+			 <!--<img src="../../../../assets/images/bg-registration-form-2.jpg"/>-->
+			 <div class="inner ">
+				 <!-- <form action=""> -->
+					 <h3 class="text-center text-info">Add New Dispatcher</h3>
+		 
+					 <div>
+						 <!--  #frm -->
+				 <form [formGroup]="form">		
+					<div class="form-group">
+						<label>Dispatcher Name </label>
+							<input type="text" class="form-control" [(ngModel)]="disName"  formControlName="dis_name"/>
+						   <div class=" alert alert-danger" *ngIf="DisName.touched && DisName.invalid"> Job name is required</div>
+
+						</div>
+         
+          
+          				<div class="form-group">
+							<label>Dispatcher phone </label>
+							<input type="text" class="form-control" [(ngModel)]="disPhone"  formControlName="dis_phone"/>
+						<div class=" alert alert-danger" *ngIf="DisPhone.touched && DisPhone.invalid"> Description of job is required</div>
+
+         				 </div>
+         
+		  <button  type="button"  routerLink="/admin/ListJob" [disabled]="!form.valid" class="btn btn-success" (click)="AddDispatcher()">Add</button>
+		  <button  type="button"  routerLink="/admin/ListJob"  class="btn btn-primary" >Cancel</button>
+				</form>
+			</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		

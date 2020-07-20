@@ -1,0 +1,88 @@
+
+<app-afterauth></app-afterauth>
+		<div class="wrapper img-fluid" style="background-image: url('../../../../assets/images/bg-registration-form-2.jpg');">
+			<div class="container">
+				<div class="w-75 b-3 text-success col-4 offset-4">
+			 <!--<img src="../../../../assets/images/bg-registration-form-2.jpg"/>-->
+			 <div class="inner ">
+				 <!-- <form action=""> -->
+					 <h3 class="text-center text-info">Register Employee</h3>
+
+					 <div>
+						 <!--  #frm -->
+		 <form [formGroup]="form">
+			 <!-- <div class="form-group ">
+						<label>Employee ID</label>
+						<input type="number" class="form-control" formControlName="empl_Id" [(ngModel)]="emplId"/>
+						<div class=" alert alert-danger" *ngIf="Empl_Id.touched && Empl_Id.invalid">Employee Id is required</div>
+					</div> -->
+					<div class="form-group ">
+						<label>Employee Name</label>
+						<input type="text" class="form-control" formControlName="empl_name" [(ngModel)]="emplname"/>
+						<div class=" alert alert-danger" *ngIf="Empl_name.touched && Empl_name.invalid">Employee Name is required</div>
+					</div>
+					<div class="form-group ">
+						<label>Employee phone</label>
+						<input type="text" class="form-control" maxlength="11" minlength="11" formControlName="empl_phone" maxlength='11' [(ngModel)]="emplphone"/>
+						<div class=" alert alert-danger" *ngIf="Empl_phone.touched &&  Empl_phone.invalid"> Employee phone is required</div>
+					</div>
+					<div class="form-group ">
+						<label>Employee Address</label>
+						<input type="text" class="form-control" formControlName="empl_address" [(ngModel)]="empladdress"/>
+						<div class=" alert alert-danger" *ngIf=" Empl_address.touched && Empl_address.invalid"> Employee address is required</div>
+					</div>
+					<div class="form-group ">
+						<label>Employee Salary</label>
+						<input type="number" class="form-control" formControlName="empl_salary" min="0" minlength="3" [(ngModel)]="emplsalary"/>
+						<div class=" alert alert-danger" *ngIf="Empl_salary.touched && Empl_salary.invalid"> Employee salary is required</div>
+					</div>
+					<div class="form-group ">
+						<label>Employee quantification</label>
+						<input type="text" class="form-control" formControlName="empl_quantification" [(ngModel)]="emplquantification"/>
+						<div class=" alert alert-danger" *ngIf="Empl_quantification.touched && Empl_quantification.invalid"> Employee quantification is required</div>
+					</div>
+					<div class="form-group ">
+						<label>Employee work period</label>
+						<input type="number" class="form-control" formControlName="empl_work_period" [(ngModel)]="emplwork_period"/>
+						<div class=" alert alert-danger" *ngIf="Empl_work_period.touched && Empl_work_period.invalid">Employee work period is required</div>
+					</div>
+					<div class="form-group ">
+						<label>Employee email</label>
+						<input type="mail" class="form-control" formControlName="empl_email" [(ngModel)]="emplemail"/>
+						<div class=" alert alert-danger" *ngIf="Empl_email.touched && Empl_email.invalid"> Employee email is required</div>
+					</div>
+					<!-- <div class="form-group ">
+						<label>Employee job_Id_fk</label>
+						<input type="number" class="form-control" formControlName="job_Id_fk" [(ngModel)]="jobId_fk"/>
+						<div class=" alert alert-danger" *ngIf="Job_Id_fk.touched && Job_Id_fk.invalid"> job Idfk is required</div>
+					</div> -->
+					<div class="form-group ">
+						<label>Employee job Title</label>
+
+					<select name="dept" id="dept" formControlName="job" class="form-control" (change)="getJobId($event)" [(ngModel)]="job_Id">
+						<option *ngFor="let job of jobs"  [value]="job.job_Id" > {{job.job_name}}</option>
+					</select>
+					</div>
+					<!-- <select (change)="getJobId($event)" >
+						<option *ngFor="let job of jobs" [ngValue]="job.job_Id" ng>
+						 {{job.job_name}}
+						</option>
+					  </select> -->
+					<!--  -->
+
+			<div class="form-group">
+<!--				<input type="button"  class="btn btn-success" [disabled]="!form.valid"  [routerLink]="['/listemployee']" (click)="addEmployee()" value="ADD Employee" />-->
+        <a type="button"  class="btn btn-success"   [routerLink]="['/listemployee']" (click)="addEmployee()" value="ADD Employee">ADD Employee</a>
+
+        <a [routerLink]="['/listemployee']" type="button" class="btn btn-info">cancel</a>
+
+			</div>
+
+
+
+				</form>
+			</div>
+		</div>
+		</div>
+		 </div></div>
+		<!-- ------------------------------------------------------ -->

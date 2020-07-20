@@ -1,0 +1,131 @@
+<!--<app-admin-layout></app-admin-layout>-->
+<app-afterauth></app-afterauth>
+
+<div class="wrapper img-fluid" style="background-image: url('../../../../assets/images/bg-registration-form-2.jpg');">
+	<div class="container">
+		<div class="w-75 b-3 text-success col-4 offset-4">
+	 <!--<img src="../../../../assets/images/bg-registration-form-2.jpg"/>-->
+	 <div class="inner ">
+		 <!-- <form action=""> -->
+			 <h3 class="text-center text-info">Update Patient</h3>
+
+			 <div>
+				<form [formGroup]="form">
+				<!-- 1 name  -->
+			<div class="form-group">
+				<label> Change Patient First Name  From :</label>
+				<label>  <span style="color: darkblue;"> {{ oldpatient.pat_f_name }} </span></label><br/>
+			</div>
+			<!--  -->
+			<div class="form-group ">
+				<span>To :</span>
+				<input type="text" class="form-control" formControlName="patf_name" [(ngModel)]="pat_f_name"/>
+				<div class=" alert alert-danger" *ngIf="Patf_name.touched && Patf_name.invalid">patient First name is required</div>
+			</div>
+			<!--  end Name -->
+			<!--   phone -->
+			<div class="form-group">
+				<label> Change Patient Last Name From : </label>
+				<label>  <span style="color: darkblue;"> {{ oldpatient.pat_l_name }} </span></label><br/>
+			</div>
+			<!--  -->
+			<div class="form-group ">
+				<label>To :</label>
+				<input type="text" class="form-control" formControlName="patl_name" [(ngModel)]="pat_l_name"/>
+				<div class=" alert alert-danger" *ngIf=" Patl_name.touched &&  Patl_name.invalid"> Patient Last Name is required</div>
+			</div>
+			<!--  Address-->
+			<div class="form-group">
+				<label> Change Patient gender  From : </label>
+				<label>  <span style="color: darkblue;"> {{ oldpatient.pat_gender }} </span></label><br/>
+			</div>
+			<!--  -->
+			<div class="form-group ">
+				<label>To :</label>
+				<input type="text" class="form-control" formControlName="patgender" [(ngModel)]="pat_gender"/>
+				<div class=" alert alert-danger" *ngIf=" Patgender.touched && Patgender.invalid"> Patient Gender is required</div>
+			</div>
+			<!-- age  -->
+			<div class="form-group">
+				<label> Change Patient Age From : </label>
+				<label>  <span style="color: darkblue;"> {{ oldpatient.pat_age }} </span></label><br/>
+			</div>
+			<!--  -->
+			<div class="form-group ">
+				<label>To :</label>
+				<input type="number" class="form-control" min="0" formControlName="patage" [(ngModel)]="pat_age"/>
+				<div class=" alert alert-danger" *ngIf="Patage.touched && Patage.invalid"> Patient Age is required</div>
+			</div>
+			<!-- qulification -->
+			<div class="form-group">
+				<label> Change Date  From : </label>
+				<label> <span style="color: darkblue;"> {{ oldpatient.date|date }} </span></label><br/>
+			</div>
+			<!--  -->
+
+			<div class="form-group ">
+				<label>To :</label>
+				<input type="date" class="form-control" formControlName="patdate" [(ngModel)]="pat_date"/>
+				<div class=" alert alert-danger" *ngIf="Patdate.touched && Patdate.invalid"> date is required</div>
+			</div>
+			<!-- Employee work period -->
+			<div class="form-group">
+				<label> Change Patient Password </label>
+				<label>  From :<span style="color: darkblue;"> {{ oldpatient.pat_password }} </span></label><br/>
+			</div>
+			<!--  -->
+<!--			<div class="form-group ">-->
+<!--				<label>To :</label>-->
+<!--				<input type="text" class="form-control" formControlName="patpassword" [(ngModel)]="pat_password"/>-->
+<!--				<div class=" alert alert-danger" *ngIf="Patpassword.touched && Patpassword.invalid"> Patient password is required</div>-->
+<!--			</div>-->
+			<!-- Employee email  -->
+			<div class="form-group">
+				<label> Change Patient Address  </label>
+				<label>  From :<span style="color: darkblue;"> {{ oldpatient.pat_address }} </span></label><br/>
+			</div>
+			<!--  -->
+			<div class="form-group ">
+				<label>To :</label>
+				<input type="mail" class="form-control" formControlName="pataddress" [(ngModel)]="pat_address"/>
+				<div class=" alert alert-danger" *ngIf="Pataddress.touched && Pataddress.invalid"> Patient password is required</div>
+            </div>
+            <!-- Patient Mail  -->
+			<div class="form-group">
+				<label> Change Patient e-mail  </label>
+				<label>  From :<span style="color: darkblue;"> {{ oldpatient.pat_mail }} </span></label><br/>
+			</div>
+			<!--  -->
+			<div class="form-group ">
+				<label>To :</label>
+				<input type="mail" class="form-control" formControlName="patmail" [(ngModel)]="pat_email"/>
+				<div class=" alert alert-danger" *ngIf="Patmail.touched && Patmail.invalid"> Patient mail is required</div>
+            </div>
+
+
+			<!-- job -->
+			<div class="form-group ">
+				<label> Change dispatcher</label>
+
+			<select name="dept" id="dept" formControlName="dispatcher" class="form-control" (change)="getdispatcherId($event)" [(ngModel)]="dis_Id_fk">
+				<option *ngFor="let item of dispatchers;"  [value]="item.dis_Id" > {{item.disp_name}}</option>
+			</select>
+			</div>
+			<!--  -->
+	<div class="form-group">
+		<input type="button" class="btn btn-success" routerLink="/listpatients" [disabled]="form.invalid" (click)="editPatient()" value="Edit Employee" />
+		<input type="button" class="btn btn-info" routerLink="/listpatients" value="Cancel" />
+	</div>
+
+
+
+		</form>
+	</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+

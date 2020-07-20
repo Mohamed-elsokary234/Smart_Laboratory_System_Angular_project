@@ -1,0 +1,46 @@
+<!-- <div>
+  <router-outlet></router-outlet>
+</div> -->
+<app-admin-layout></app-admin-layout>
+
+<div class="container-fluid"style="background-image: url('../../../../assets/images/background.PNG');">
+
+
+    <a  type="button"  routerLink="/admin/ListJob/admin/AddJob" class="btn btn-success btn-m bt" routerLink ="admin/AddJob">Add Job</a>
+    <!--<button class="btn btn-success" (click)="loadJobs()">Load</button>-->
+  <table class="table table-striped table-light" style="border: 2px solid black;">
+    <thead class="bg-dark text-light">
+        <tr>
+          <th scope="col">Job Name</th>
+          <th scope="col">Job Description</th>
+
+          <th colspan="2">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let item of listjobs'>
+          <th whidth="150" scope="row">{{item.job_name}}</th>
+          <td>{{item.job_description}}</td>
+
+
+
+
+          <td><a [routerLink]="['admin/EditJob',item.job_Id ]" type="button" class="btn btn-info">Edit</a></td>
+          <td><a  [routerLink]="['admin/DeleteJob',item.job_Id ]" type="button" class="btn btn-danger">Delete</a></td>
+        </tr>
+        <!--<tr>
+          <th scope="row">2</th>
+          <td>Dispatcher</td>
+
+
+
+
+
+          <td><a routerLink="/admin/ListJobadmin/EditJob" type="button" class="btn btn-info">Edit</a></td>
+          <td><a routerLink="/admin/ListJobadmin/DeleteJob" type="button" class="btn btn-danger">Delete</a></td>
+        </tr>-->
+
+      </tbody>
+  </table>
+
+</div>

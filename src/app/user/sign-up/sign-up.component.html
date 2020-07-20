@@ -1,0 +1,45 @@
+<form #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)" class="col s12 white">
+  <div class="row">
+    <div class="input-field col s6">
+      <input #UserName="ngModel" [(ngModel)]="user.UserName" class="validate" name="UserName" required type="text">
+      <label data-error="Required field!">UserName</label>
+    </div>
+    <div class="input-field col s6">
+      <input #Password="ngModel" [(ngModel)]="user.Password" class="validate" minlength="6" name="Password" required
+             type="password">
+      <label
+        [attr.data-error]="Password.errors!=null?(Password.errors.required?'Required field!':'Enter a Valid Password '):''">Password</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input #Email="ngModel" [(ngModel)]="user.Email" [pattern]="emailPattern" class="validate" name="Email"
+             type="text">
+      <label data-error="Invalid email!">Email</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s6">
+      <input #FirstName="ngModel" [(ngModel)]="user.FirstName" name="FirstName" type="text">
+      <label>First Name</label>
+    </div>
+    <div class="input-field col s6">
+      <input #LastName="ngModel" [(ngModel)]="user.LastName" name="LastName" type="text">
+      <label>Last Name</label>
+    </div>
+  </div>
+  <div *ngIf="roles" class="row">
+    <ul>
+      <li *ngFor="let item of roles;let i = index">
+        <input (change)="updateSelectedRoles(i)" [checked]="item.selected" [id]="'roles-'+i" type="checkbox"
+               value="{{item.Id}}">
+        <label [for]="'roles-'+i">{{item.Name}}</label>
+      </li>
+    </ul>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <button [disabled]="!userRegistrationForm.valid" class="btn-large btn-submit" type="submit">Submit</button>
+    </div>
+  </div>
+</form>

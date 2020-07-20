@@ -1,0 +1,43 @@
+<app-admin-layout></app-admin-layout>
+
+  <div class="container-fluid" style="background-image: url('../../../../assets/images/background.PNG');">
+   <div class="content">
+  
+   <!-- <a id="bt" routerLink="/admin/bill/admin/addEmployee"type="button" class="btn btn-success btn-lg">Add Bill</a> -->
+ <table class="table table-striped table-light" style="border: 2px solid black;">
+   <thead class="bg-dark text-light">
+       <tr>
+         <!-- <th scope="col">Patient Name</th> -->
+
+       <th>Bill paid</th>
+       <!-- <th scope="col">Test Name</th> -->
+       <!-- <th scope="col">Bill Paid</th> -->
+       <th scope="col">Discount</th>
+       <th scope="col">Net</th>
+       <th scope="col">date</th>
+       
+         <!-- <th colspan="2">Action</th> -->
+       </tr>
+     </thead>
+     <tbody>
+ 
+         <tr *ngFor="let bill of Bills; index as i; first as isFirst">
+            <td> {{ bill.bill_paid}} </td>
+    
+              <!-- <td> {{ bill.bill_paid}} </td>
+              <td> {{ bill.bill_paid}} </td> -->
+    
+              <td> {{ bill.discount}} </td>
+              <td> {{ bill.net}} </td>
+              <td> {{ bill.date|date}} </td>
+          
+           <!-- <td><a routerLink="/admin/ListEmployee/admin/EditEmployee" type="button" class="btn btn-info">Edit</a></td> -->
+         <!-- <td><a routerLink="/admin/ListEmployee/admin/DeleteEmployee" type="button" class="btn btn-danger">Delete</a></td> -->
+       </tr>
+       <!-- {{id}} -->
+      
+   </tbody>
+ </table>
+ 
+ </div>
+ </div>

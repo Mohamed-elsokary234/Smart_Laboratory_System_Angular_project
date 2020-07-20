@@ -1,0 +1,39 @@
+<app-afterauth></app-afterauth>
+<div class="container-fluid" style="background-image: url('../../../../assets/images/background.PNG');">
+  <div class="form-group col-md-4" id="ser">
+    <input type="text" class="form-control" placeholder="Enter Keyword for filter result" [(ngModel)]="searchedKeyword">
+
+  </div>
+  <a id="bt" routerLink="/addtest" type="button" class="btn btn-success btn-lg">Add Test</a>
+  <table class="table table-striped table-light" style="border: 2px solid black;">
+    <thead class="bg-dark text-light">
+    <tr>
+       <th scope="col">ID</th>
+      <th scope="col">Test Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Normal value</th>
+<!--      <th scope="col">Test Date</th>-->
+<!--      <th scope="col">Department Name</th>-->
+      <th colspan="4">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of collection.data | paginate: config  | filter:searchedKeyword; let dept of departments;">
+      <!-- <th scope="row">{{item.test_id}}</th> -->
+      <td>{{item.test_Id}}</td>
+      <td>{{item.test_name}}</td>
+      <td>{{item.test_price}}</td>
+      <td>{{item.reference_value}}</td>
+<!--      <td>{{item.date|date}}</td>-->
+<!--      <td>{{dept.dep_name}}</td>-->
+
+      <td><a [routerLink]="['/edittest',item.test_Id ]" type="button" class="btn btn-info">Edit</a></td>
+      <td><a [routerLink]="['/deletetest',item.test_Id ]" type="button" class="btn btn-danger">Delete</a></td>
+    </tr>
+
+
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+
+</div>

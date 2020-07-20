@@ -1,0 +1,18 @@
+/* @import '../' */
+.mysokarystyle{
+    margin-top: 100px;
+    border: 13px groove teal;
+    text-align: center;
+    color: rgb(50, 6, 107);
+    display: block;
+    height: 415px;
+    border-radius: 10px;
+        
+    }
+    .parent{
+        border:1px solid rgb(204, 199, 199);
+
+    }
+    ul{
+        text-decoration: none;
+    }

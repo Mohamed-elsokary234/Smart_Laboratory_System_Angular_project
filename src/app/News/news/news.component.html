@@ -1,0 +1,60 @@
+<ngb-carousel>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper" class="container-fluid" style="background-image: url('../../../../assets/images/slide1.PNG');">
+      <!--<img src="../../../../assets/images/Capture1.PNG" alt="Angular Carousel 1">-->
+   
+        <div *ngFor="let article of newArticl1">
+            <h4>{{article.title}}</h4>
+          
+              <p>
+                {{article.description}}
+              </p>
+              <a href="{{article.url}}">Read full article</a>
+          </div>
+    </div>
+  
+    <div class="carousel-caption">
+      <h3>Latest News</h3>
+     
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper" class="container-fluid" style="background-image: url('../../../../assets/images/Capture.PNG')">
+    
+
+  <div *ngFor="let article of newArticl2">
+      <h4>{{article.title}}</h4>
+    
+        <p>
+          {{article.description}}
+        </p>
+        <a href="{{article.url}}">Read full article</a>
+    </div>
+
+     
+    </div>
+    <div class="carousel-caption">
+      <h3>Ready To Help You</h3>
+    
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper" class="container-fluid" style="background-image: url('../../../../assets/images/Capture1.PNG');">
+    
+        <div *ngFor="let article of newArticl3">
+            <h4>{{article.title}}</h4>
+          
+              <p>
+                {{article.description}}
+              </p>
+              <a href="{{article.url}}">Read full article</a>
+          </div>
+    </div>
+  
+    <div class="carousel-caption">
+      <h3>Protect your self and your family</h3>
+      
+    </div>
+  </ng-template>
+</ngb-carousel>
+

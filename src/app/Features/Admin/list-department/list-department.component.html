@@ -1,0 +1,24 @@
+<app-afterauth></app-afterauth>
+<div class="container-fluid" style="background-image: url('../../../../assets/images/background.PNG');">
+  <div class="form-group col-md-4" id="ser">
+    <input type="text" class="form-control" placeholder="Enter Keyword for filter result" [(ngModel)]="searchedKeyword">
+
+  </div>
+  <a routerLink="/adddepartment" type="button" class="btn btn-success bt">Add Department</a>
+  <!-- <div id="bil"></div> -->
+  <table class="table table-striped table-light" style="border: 2px solid black;">
+    <thead class="bg-dark text-light">
+    <th>Department Name</th>
+    <th colspan="2">actions</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let dept of collection.data | paginate: config  | filter:searchedKeyword; index as i; "
+        [id]="dept.dep_Id">
+      <td> {{ dept.dep_name}} </td>
+      <td><a [routerLink]="['/editdepartment',dept.dep_Id ]" type="button" class="btn btn-info">Edit</a></td>
+      <td><a [routerLink]="['/deletedepartment',dept.dep_Id ]" type="button" class="btn btn-danger">Delete</a></td>
+    </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+</div>

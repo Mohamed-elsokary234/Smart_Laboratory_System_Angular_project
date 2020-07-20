@@ -1,0 +1,41 @@
+<app-admin-layout></app-admin-layout>
+
+<div class="wrapper" style="background-image: url('../../../../assets/images/bg-registration-form-2.jpg');">
+	<div class="inner">
+			<h3>update Department</h3>
+
+			<div>
+				<form [formGroup]="form">
+				<!-- name -->
+					<div class="form-group">
+						<label> Change Job Name From :  </label><br/>
+						<label>  <span style="color: darkblue;"> {{oldJob.job_name}} </span></label><br/>
+					</div>
+					<div class="form-group">
+						<!-- <label> Change Department Name </label><br/>
+						<label> From : {{oldDept.dep_name}}</label><br/> -->
+				<label style="width: 50px;">	 To :	</label><input type="text" class="form-control" formControlName="job_name"  [(ngModel)]="jobname"/><br/>
+						<div class=" alert alert-danger" *ngIf="jobName.touched && jobName.invalid"> job Name is required</div>
+					</div>
+					<!--  description-->
+					<div class="form-group">
+						<label> Change Job Description  From :</label><br/>
+						<label>  <span style="color: darkblue;"> {{oldJob.job_description}} </span></label><br/>
+					</div>
+					<div class="form-group">
+						<!-- <label> Change Department Name </label><br/>
+						<label> From : {{oldDept.dep_name}}</label><br/> -->
+				<label style="width: 50px;">	 To :	</label><input type="text" class="form-control" formControlName="job_discription"  [(ngModel)]="Discription"/><br/>
+						<div class=" alert alert-danger" *ngIf="jobDiscription.touched && jobDiscription.invalid"> Description Job is required</div>
+					</div>
+					<!-- end -->
+				
+					<div class="form-group">
+						<input type="button" class="btn btn-success" routerLink="/admin/ListJob" [disabled]="form.invalid" (click)="editJob()" value="Save changes" />
+						<a routerLink="/admin/ListJob" type="button" class="btn btn-info">cancel</a>
+					</div>
+				</form>
+				</div>
+			
+	</div>
+</div>

@@ -1,0 +1,57 @@
+<!--<app-admin-layout></app-admin-layout>-->
+<app-afterauth></app-afterauth>
+		<div class="wrapper img-fluid" style="background-image: url('../../../../assets/images/bg-registration-form-2.jpg');">
+			<div class="container">
+				<div class="w-75 b-3 text-success col-4 offset-4">
+			 <div class="inner ">
+					 <h3 class="text-center text-info">Add Test</h3>
+
+					 <div>
+		 <form [formGroup]="form">
+					<div class="form-group ">
+						<label>Test Name</label>
+						<input type="text" class="form-control" formControlName="test_Name" [(ngModel)]="TestName"/>
+						<div class=" alert alert-danger" *ngIf="Test_Name.touched && Test_Name.invalid">Test Name is required</div>
+					</div>
+					<div class="form-group ">
+						<label> price</label>
+						<input type="number" class="form-control" min="0" maxlength="10" formControlName="test_Price"  [(ngModel)]="TestPrice"/>
+						<div class=" alert alert-danger" *ngIf="Test_Price.touched && Test_Price.invalid"> Test Price is required</div>
+					</div>
+					<div class="form-group ">
+						<label>Reference value</label>
+						<input type="text" class="form-control" formControlName="reference_value" [(ngModel)]="ReferenceValue"/>
+						<div class=" alert alert-danger" *ngIf=" Reference_value.touched && Reference_value.invalid"> Reference Value is required</div>
+					</div>
+					<!-- calender -->
+					<div class="form-group ">
+						<label>Date</label>
+						<input type="date" class="form-control"  formControlName="date_test" [(ngModel)]="Datetest"/>
+						<div class=" alert alert-danger" *ngIf=" Date_test.touched && Date_test.invalid"> date  is required</div>
+					</div>
+					<!-- select Department -->
+					<div class="form-group ">
+
+					<label>
+						Department Name
+					</label>
+					<select (change)="getDeptId($event)" class="form-control" formControlName="depts">
+						<option *ngFor="let dept of Departments"   [value]="dept.dep_Id" >
+						 {{dept.dep_name}}
+						</option>
+					  </select>
+					</div>
+
+					<!--  -->
+
+			<div class="form-group">
+				<input type="button" [disabled]="!form.valid" class="btn btn-success" routerLink="/listtestdepartment" (click)="addTest()" value="ADD Test" />
+				<input routerLink="/admin/ListTestDepartment" type="button" class="btn btn-info" value="cancel" />
+
+			</div>
+				</form>
+			</div>
+		</div>
+		</div>
+		 </div></div>
+		<!-- ------------------------------------------------------ -->

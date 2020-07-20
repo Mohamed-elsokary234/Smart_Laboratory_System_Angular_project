@@ -1,0 +1,15 @@
+#bil{height: 100px;}
+.container-fluid{
+    min-height:100vh;
+    margin-top:0px;
+    background-size: cover;
+width:100%;
+align-items: center;
+}
+/*.search{margin-top:100px; margin-left:250px ;}*/
+
+table{width: 70%; margin-left: 250px; margin-top:-200px;}
+
+td,th{text-align: center;}
+#bt{margin-left:1380px; background-color: #1caa1cbd;margin-top:2px;margin-bottom:100px;}
+#ser{margin-top:150px; margin-left: 240px;}

@@ -1,0 +1,68 @@
+<app-afterauth></app-afterauth>
+<div class="container-fluid"style="background-image: url('../../../../assets/images/background.PNG');">
+  <div id="bil"></div>
+  <div class="search" style="text-align:left;">
+    <a routerLink="/addpatients" type="button" class="btn btn-success btn-m">Create Patient</a>
+
+    <form>
+      <mat-form-field class="container">
+
+        <!-- ADD AN INPUT BOX OF TYPE TEXT AND LINK IT TO THE AUTO COMPLETE PANEL. -->
+        <input type="text" placeholder="Search Patients ..."
+               matInput
+               [formControl]="searchTerm"
+               [matAutocomplete]="auto" #b>
+
+        <!-- CREATE AUTO COMPLETE PANEL WITH OPTIONS. -->
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let Patients of collection.data" [value]="Patients.pat_f_name">
+            {{ Patients.pat_f_name }}
+          </mat-option>
+        </mat-autocomplete>
+
+      </mat-form-field>
+    </form>
+
+  </div>
+
+</div>
+<div>
+</div>
+
+
+<table class="table table-striped table-light" style="border: 2px solid black;">
+  <thead class="bg-dark text-light">
+      <tr>
+
+        <th scope="col">Full Name</th>
+<!--        <th scope="col">Last Name</th>-->
+        <th scope="col">Gender</th>
+        <th scope="col">Age</th>
+        <th scope="col">Address</th>
+        <th scope="col">Email</th>
+<!--        <th scope="col">Password</th>-->
+        <th scope="col">Date</th>
+<!--        <th scope="col">Dispatcher</th>-->
+        <th colspan="2">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of collection.data | paginate: config">
+
+        <td> {{item.pat_f_name}}  {{item.pat_l_name}}</td>
+<!--        <td> {{item.pat_l_name}}</td>-->
+        <td> {{item.pat_gender}}</td>
+        <td> {{item.pat_age}}</td>
+        <td> {{item.pat_address}}</td>
+        <td> {{item.pat_mail}}</td>
+<!--        <td> {{item.pat_password}}</td>-->
+        <td> {{item.pat_date}}</td>
+<!--         <td> {{item.dis_Id_fk}}</td>-->
+
+
+        <td><a type="button" class="btn btn-info" [routerLink]="['/editpatients',item.pat_Id]">Edit</a></td>
+        <td><a type="button" class="btn btn-danger" [routerLink]="['/deletepatients',item.pat_Id]" >Delete</a></td>
+      </tr>
+    </tbody>
+</table>
+<pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>

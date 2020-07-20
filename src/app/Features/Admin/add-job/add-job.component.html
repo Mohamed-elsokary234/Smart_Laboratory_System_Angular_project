@@ -1,0 +1,37 @@
+<app-admin-layout></app-admin-layout>
+
+		<div class="wrapper img-fluid" style="background-image: url('../../../../assets/images/bg-registration-form-2.jpg');">
+			<div class="container">
+				<div class="w-75 b-3 text-success col-4 offset-4">
+			 <!--<img src="../../../../assets/images/bg-registration-form-2.jpg"/>-->
+			 <div class="inner ">
+				 <!-- <form action=""> -->
+					 <h3 class="text-center text-info">Add New Job</h3>
+		 
+					 <div>
+						 <!--  #frm -->
+				 <form [formGroup]="form">		
+					<div class="form-group">
+						<label>Job Name </label>
+							<input type="text" class="form-control" [(ngModel)]="jobname"  formControlName="job_name"/>
+						   <div class=" alert alert-danger" *ngIf="JobName.touched && JobName.invalid"> Job name is required</div>
+
+						</div>
+         
+          
+          				<div class="form-group">
+							<label>Job discription </label>
+							<input type="text" class="form-control" [(ngModel)]="jobname_desc"  formControlName="job_name_desc"/>
+						<div class=" alert alert-danger" *ngIf="JobName_desc.touched && JobName_desc.invalid"> Description of job is required</div>
+
+         				 </div>
+         
+		  <button  type="button"  routerLink="/admin/ListJob" [disabled]="!form.valid" class="btn btn-success" (click)="createJob()">Add</button>
+		  <button  type="button"  routerLink="/admin/ListJob"  class="btn btn-primary" >Cancel</button>
+				</form>
+			</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		

@@ -1,0 +1,117 @@
+<!--<app-admin-layout></app-admin-layout>-->
+<app-afterauth></app-afterauth>
+<div class="wrapper img-fluid" style="background-image: url('../../../../assets/images/bg-registration-form-2.jpg');">
+	<div class="container">
+		<div class="w-75 b-3 text-success col-4 offset-4">
+	 <!--<img src="../../../../assets/images/bg-registration-form-2.jpg"/>-->
+	 <div class="inner ">
+		 <!-- <form action=""> -->
+			 <h3 class="text-center text-info">Update Employee</h3>
+
+			 <div>
+				<form [formGroup]="form">
+				<!-- 1 name  -->
+			<div class="form-group">
+				<label> Change Employee Name  From :</label>
+				<label>  <span style="color: darkblue;"> {{ oldEmp.empl_name }} </span></label><br/>
+			</div>
+			<!--  -->
+			<div class="form-group ">
+				<span>To :</span>
+				<input type="text" class="form-control" formControlName="empl_name" [(ngModel)]="emplname"/>
+				<div class=" alert alert-danger" *ngIf="Empl_name.touched && Empl_name.invalid">Employee name is required</div>
+			</div>
+			<!--  end Name -->
+			<!--   phone -->
+			<div class="form-group">
+				<label> Change Employee Phone From : </label>
+				<label>  <span style="color: darkblue;"> {{ oldEmp.empl_phone }} </span></label><br/>
+			</div>
+			<!--  -->
+			<div class="form-group ">
+				<label>To :</label>
+				<input type="text" class="form-control" minlength="11" maxlength="11" formControlName="empl_phone" [(ngModel)]=" emplphone"/>
+				<div class=" alert alert-danger" *ngIf=" Empl_phone.touched &&  Empl_phone.invalid"> Employee phone is required</div>
+			</div>
+			<!--  Address-->
+			<div class="form-group">
+				<label> Change Employee Address  From : </label>
+				<label>  <span style="color: darkblue;"> {{ oldEmp.empl_address }} </span></label><br/>
+			</div>
+			<!--  -->
+			<div class="form-group ">
+				<label>To :</label>
+				<input type="text" class="form-control" formControlName="empl_address" [(ngModel)]=" empladdress"/>
+				<div class=" alert alert-danger" *ngIf=" Empl_address.touched && Empl_address.invalid"> Employee address is required</div>
+			</div>
+			<!-- salary  -->
+			<div class="form-group">
+				<label> Change Employee Salary From : </label>
+				<label>  <span style="color: darkblue;"> {{ oldEmp.empl_salary }} </span></label><br/>
+			</div>
+			<!--  -->
+			<div class="form-group ">
+				<label>To :</label>
+				<input type="number" class="form-control" min="0" formControlName="empl_salary" [(ngModel)]="emplsalary"/>
+				<div class=" alert alert-danger" *ngIf="Empl_salary.touched && Empl_salary.invalid"> Employee salary is required</div>
+			</div>
+			<!-- qulification -->
+			<div class="form-group">
+				<label> Change Employee qulification  From : </label>
+				<label> <span style="color: darkblue;"> {{ oldEmp.empl_quantification }} </span></label><br/>
+			</div>
+			<!--  -->
+
+			<div class="form-group ">
+				<label>To :</label>
+				<input type="text" class="form-control" formControlName="empl_qulification" [(ngModel)]="emplqulification"/>
+				<div class=" alert alert-danger" *ngIf="Empl_qulification.touched && Empl_qulification.invalid"> Employee quantification is required</div>
+			</div>
+			<!-- Employee work period -->
+			<div class="form-group">
+				<label> Change Employee work period  </label>
+				<label>  From :<span style="color: darkblue;"> {{ oldEmp.empl_work_period }} </span></label><br/>
+			</div>
+			<!--  -->
+			<div class="form-group ">
+				<label>To :</label>
+				<input type="text" class="form-control" formControlName="empl_work_period" [(ngModel)]="emplwork_period"/>
+				<div class=" alert alert-danger" *ngIf="Empl_work_period.touched && Empl_work_period.invalid"> employee work period is required</div>
+			</div>
+			<!-- Employee email  -->
+			<div class="form-group">
+				<label> Change Employee email  </label>
+				<label>  From :<span style="color: darkblue;"> {{ oldEmp.empl_email }} </span></label><br/>
+			</div>
+			<!--  -->
+			<div class="form-group ">
+				<label>To :</label>
+				<input type="mail" class="form-control" formControlName="empl_email" [(ngModel)]="emplemail"/>
+				<div class=" alert alert-danger" *ngIf="Empl_email.touched && Empl_email.invalid"> Employee email is required</div>
+			</div>
+			<!-- job -->
+			<div class="form-group ">
+				<label> Change Employee job Title</label>
+
+			<select name="dept" id="dept" formControlName="job" class="form-control" (change)="getJobId($event)" [(ngModel)]="job_Id">
+				<option *ngFor="let job of jobs"  [value]="job.job_Id" > {{job.job_name}}</option>
+			</select>
+			</div>
+			<!--  -->
+	<div class="form-group">
+		<input type="button" class="btn btn-success" routerLink="/listemployee"  [disabled]="form.invalid" (click)="editEmployee()" value="Edit Employee" />
+		<input type="button" class="btn btn-info" routerLink="/listemployee" value="Cancel" />
+	</div>
+
+
+
+		</form>
+	</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+

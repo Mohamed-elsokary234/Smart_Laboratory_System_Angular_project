@@ -1,0 +1,77 @@
+<!--
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>RegistrationForm_v2 by Colorlib</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		 MATERIAL DESIGN ICONIC FONT
+
+	</head>
+
+	<body>-->
+<app-afterauth></app-afterauth>
+<!--<app-admin-layout></app-admin-layout>-->
+		<div class="wrapper" style="background-image: url('../../../../assets/images/bg-registration-form-2.jpg');">
+			<!--<img src="../../../../assets/images/bg-registration-form-2.jpg"/>-->
+			<div class="inner">
+				<!-- <form action=""> -->
+					<h3>Add new Department</h3>
+
+					<div>
+						<form [formGroup]="form">
+
+							<div class="form-group">
+								<label> Department Name</label>
+								<input type="text" class="form-control" formControlName="Dept" [(ngModel)]="Name"/>
+								<div class=" alert alert-danger" *ngIf="dept.touched && dept.invalid">Department Name is required</div>
+							</div>
+
+							<div class="form-group">
+								<!-- <input type="submit" value="login" /> -->
+<!--								<input type="button" routerLink="/listdepartment" [disabled]="form.invalid" class="btn btn-success" (click)="addDepartment()" value="Add Department" />-->
+
+                <a href="/listdepartment"  type="button" class="btn btn-success"   (click)="addDepartment()" value="Add Department">Add Department</a>
+
+                <a routerLink="/listdepartment" type="button" class="btn btn-info">cancel</a>
+							</div>
+						</form>
+						</div>
+					<!--<div class="form-group">
+						<div class="form-wrapper">
+							<label for="">First Name</label>
+							<input type="text" class="form-control">
+						</div>
+						<div class="form-wrapper">
+							<label for="">Last Name</label>
+							<input type="text" class="form-control">
+						</div>
+					</div>
+					<div class="form-wrapper">
+						<label for="">Email</label>
+						<input type="text" class="form-control">
+					</div>-->
+					<!--  -->
+					<!-- <div class="form-wrapper">
+						<label for="" >dept ID</label>
+						<input type="number" [(ngModel)]="[dept.Id]"   class="form-control">
+					</div>
+					<div class="form-wrapper">
+						<label for="">Dept Name</label>
+						<input type="text" [(ngModel)] = "[dept.Name]" class="form-control">
+					</div> -->
+
+					<!--  -->
+					<!--<div class="checkbox">
+						<label>
+							<input type="checkbox"> I caccept the Terms of Use & Privacy Policy.
+							<span class="checkmark"></span>
+						</label>
+					</div>-->
+					<!-- <input type="submit" (click)="addDepartment()" value=" Add department"/> -->
+				<!-- </form> -->
+			</div>
+		</div>
+
+	<!-- This templates was made by Colorlib (https://colorlib.com) -->
